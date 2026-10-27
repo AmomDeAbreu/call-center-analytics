@@ -218,3 +218,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# Call Center Analytics - arquivos locais
+*.pbix
+*.pbit
+*.tmp
+*.bak
+~$*
+.DS_Store
+Thumbs.db
+/data/tmp/
+/reports/tmp/
+/powerbi/.pbi/
