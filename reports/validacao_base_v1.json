@@ -1,0 +1,72 @@
+{
+  "status": "VALIDACOES_PYTHON_CONCLUIDAS_POWER_BI_PENDENTE",
+  "executado_em_utc": "2026-10-28T13:50:11.621147+00:00",
+  "python": "3.14.2",
+  "config_sha256": "46488cea64f6ba8a31eda6fb35f502b11cd4586c92e5f3859536c7064156be10",
+  "fontes_sha256": {
+    "src/disponibilidade.py": "7e7219e232defa8a82776e24223f6ebb33d875831c5b7a4d9881ba999985dccf",
+    "src/entradas.py": "e8782dc3afb8d1c2120dad93e050ca5c47809d06223ece4d980dde6deddef947",
+    "src/exportar.py": "c9d685dcff3fa52901118c1270e5492b7189c3e29e09fe92e6dbfd4cbe3e6d02",
+    "src/simulador.py": "66c7135268aa494c318bf3834574ba5b44907fd82b2cbf3a5b8d967cb4103e8d",
+    "src/validacao_decisoes.py": "43395e05495926b4a9a7cde01d9bc9befd7c1719dbfa0a74e1e0c0363b08c895",
+    "src/validacao_integridade.py": "5a6b2f2ee2d8a6ad2f8fd8f7d5bb4d8923799907842817e543e2ca3bc9bc46d7",
+    "tests/test_disponibilidade.py": "747dbf4f49aad5ab40635dfb5bdbe17d809b267e47d2a2dd846f50c1a0e837bb",
+    "tests/test_entradas.py": "21710b34b53816cda3c7bd99f3bb68eb579d1c3e7c7b72135cba76264eb936a8",
+    "tests/test_simulador.py": "2ddb088a9bbb2a8185ded9609b723d802af89a650b179eadeed72fd2a927b4e8",
+    "tests/test_validacao_integridade.py": "fa98a887efe0ab963f63d655ef73f928da88607cf7481460d59990d672166ad8"
+  },
+  "integridade": {
+    "chamadas_conferidas": 3000,
+    "disponibilidades_conferidas": 1110
+  },
+  "decisoes": {
+    "dias_reconstruidos": 90,
+    "chamadas_com_decisoes_conferidas": 3000,
+    "divergencias": 0
+  },
+  "cobertura": {
+    "3000_chamadas": true,
+    "90_dias": true,
+    "conciliacao": true,
+    "filas_com_ambos_status": true,
+    "oito_atendentes_com_atendimento": true,
+    "esperas_ate_20s": true,
+    "esperas_acima_20s": true,
+    "desistencia": true,
+    "fechamento": true,
+    "pos_positivo": true,
+    "disponibilidade_variavel": true
+  },
+  "duas_geracoes_identicas": true,
+  "leitura_csv_conferida": true,
+  "testes_exit_code": 0,
+  "indicadores_controle": {
+    "recebidas": 3000,
+    "atendidas": 1959,
+    "abandonadas": 1041,
+    "atendidas_ate_20s": 1846,
+    "tempo_total_atendimento_segundos": 941831.0,
+    "tma_segundos": 480.7713118938234,
+    "taxa_abandono": 0.347,
+    "sla_demonstrativo": 0.6153333333333333
+  },
+  "arquivos": {
+    "chamadas.csv": {
+      "linhas": 3000,
+      "sha256": "133323d4e0a55a929191caa885cb1c2fb0be0807e71e4745926438210f05ac06"
+    },
+    "disponibilidade_atendentes.csv": {
+      "linhas": 1110,
+      "sha256": "ce111a6ed5725b963c65070f38244b999c89b2c7bc18cf30efb21175202c4654"
+    },
+    "atendentes.csv": {
+      "linhas": 8,
+      "sha256": "4f00bd34b510668bca6dc1dc22d798563e79fa26f35acb2e0570aa82c42d3c81"
+    },
+    "filas.csv": {
+      "linhas": 3,
+      "sha256": "296d91d633c0805ba8e8a8b9a41d574fb477dd7c65b9fce2755e663fc7fcc921"
+    }
+  },
+  "tempo_execucao_segundos": 6.628
+}

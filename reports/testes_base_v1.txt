@@ -1,0 +1,33 @@
+test_disponibilidade_variavel (test_disponibilidade.TestDisponibilidade.test_disponibilidade_variavel) ... ok
+test_ids_e_referencias (test_disponibilidade.TestDisponibilidade.test_ids_e_referencias) ... ok
+test_intervalos_correspondem_a_perfis_aprovados (test_disponibilidade.TestDisponibilidade.test_intervalos_correspondem_a_perfis_aprovados) ... ok
+test_limites_temporais (test_disponibilidade.TestDisponibilidade.test_limites_temporais) ... ok
+test_repetibilidade (test_disponibilidade.TestDisponibilidade.test_repetibilidade) ... ok
+test_sem_sobreposicao_inclusive_entre_filas (test_disponibilidade.TestDisponibilidade.test_sem_sobreposicao_inclusive_entre_filas) ... ok
+test_cobertura_e_horarios (test_entradas.TestEntradas.test_cobertura_e_horarios) ... ok
+test_filas_e_tempos_planejados (test_entradas.TestEntradas.test_filas_e_tempos_planejados) ... ok
+test_repetibilidade_da_sequencia_completa (test_entradas.TestEntradas.test_repetibilidade_da_sequencia_completa) ... ok
+test_sem_resultados_de_atendimento_inventados (test_entradas.TestEntradas.test_sem_resultados_de_atendimento_inventados) ... ok
+test_volume_ids_e_ordem (test_entradas.TestEntradas.test_volume_ids_e_ordem) ... ok
+test_duas_no_limite_dois_profissionais (test_simulador.TestSimulador.test_duas_no_limite_dois_profissionais) ... ok
+test_expiracao_sem_outro_evento (test_simulador.TestSimulador.test_expiracao_sem_outro_evento) ... ok
+test_liberacao_as_18_nao_permite_novo_atendimento (test_simulador.TestSimulador.test_liberacao_as_18_nao_permite_novo_atendimento) ... ok
+test_nao_combina_intervalos_adjacentes (test_simulador.TestSimulador.test_nao_combina_intervalos_adjacentes) ... ok
+test_ocupacao_pode_terminar_apos_18 (test_simulador.TestSimulador.test_ocupacao_pode_terminar_apos_18) ... ok
+test_pos_atendimento_impede_sobreposicao (test_simulador.TestSimulador.test_pos_atendimento_impede_sobreposicao) ... ok
+test_posterior_expira_sem_ultrapassar_primeira (test_simulador.TestSimulador.test_posterior_expira_sem_ultrapassar_primeira) ... ok
+test_primeira_nao_cabe_expira_segunda_atendida (test_simulador.TestSimulador.test_primeira_nao_cabe_expira_segunda_atendida) ... ok
+test_rejeita_disponibilidade_sobreposta_entre_filas (test_simulador.TestSimulador.test_rejeita_disponibilidade_sobreposta_entre_filas) ... ok
+test_aceita_abandono_e_rejeita_atraso (test_validacao_integridade.TestValidacaoIntegridade.test_aceita_abandono_e_rejeita_atraso) ... ok
+test_aceita_caso_manual (test_validacao_integridade.TestValidacaoIntegridade.test_aceita_caso_manual) ... ok
+test_rejeita_disponibilidade_de_outra_fila (test_validacao_integridade.TestValidacaoIntegridade.test_rejeita_disponibilidade_de_outra_fila) ... ok
+test_rejeita_duplicidade (test_validacao_integridade.TestValidacaoIntegridade.test_rejeita_duplicidade) ... ok
+test_rejeita_duracao_adulterada (test_validacao_integridade.TestValidacaoIntegridade.test_rejeita_duracao_adulterada) ... ok
+test_rejeita_nulo_em_atendida (test_validacao_integridade.TestValidacaoIntegridade.test_rejeita_nulo_em_atendida) ... ok
+test_rejeita_referencia_inexistente (test_validacao_integridade.TestValidacaoIntegridade.test_rejeita_referencia_inexistente) ... ok
+test_rejeita_sobreposicao_de_ocupacao (test_validacao_integridade.TestValidacaoIntegridade.test_rejeita_sobreposicao_de_ocupacao) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.235s
+
+OK
