@@ -1,0 +1,161 @@
+{
+  "versao_configuracao": "1.0.0",
+  "semente": 20260101,
+  "python_referencia": "3.14.2",
+  "cenario": "Operacao demonstrativa de baixo volume; dados 100% sinteticos",
+  "periodo": {
+    "inicio": "2026-01-01",
+    "fim": "2026-03-31",
+    "fuso_referencia": "America/Sao_Paulo",
+    "utc_offset": "-03:00"
+  },
+  "volume": {
+    "total_chamadas": 3000,
+    "chamadas_reservadas_por_dia": 1,
+    "pesos_dias_semana_segunda_a_domingo": [
+      10,
+      10,
+      10,
+      10,
+      10,
+      6,
+      6
+    ]
+  },
+  "horarios": {
+    "abertura": "08:00:00",
+    "fechamento": "18:00:00",
+    "fim_maximo_ocupacao": "18:30:00",
+    "horas_entrada": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "pesos_horas": [
+      7,
+      10,
+      13,
+      10,
+      6,
+      7,
+      11,
+      13,
+      13,
+      10
+    ]
+  },
+  "atendentes": {
+    "quantidade": 8,
+    "prefixo_id": "AT",
+    "prefixo_nome": "Atendente"
+  },
+  "filas": [
+    {
+      "fila_id": "F01",
+      "fila_nome": "Informações",
+      "peso": 40,
+      "contato_segundos_min": 30,
+      "contato_segundos_max": 300
+    },
+    {
+      "fila_id": "F02",
+      "fila_nome": "Suporte",
+      "peso": 35,
+      "contato_segundos_min": 180,
+      "contato_segundos_max": 1200
+    },
+    {
+      "fila_id": "F03",
+      "fila_nome": "Financeiro",
+      "peso": 25,
+      "contato_segundos_min": 120,
+      "contato_segundos_max": 900
+    }
+  ],
+  "espera": {
+    "tolerancia_segundos_min": 5,
+    "tolerancia_segundos_max": 600
+  },
+  "pos_atendimento": {
+    "peso_zero": 15,
+    "peso_positivo": 85,
+    "segundos_positivos_min": 1,
+    "segundos_positivos_max": 180
+  },
+  "disponibilidade": {
+    "perfis": [
+      {
+        "nome": "SEM_DISPONIBILIDADE",
+        "peso": 25,
+        "intervalos": []
+      },
+      {
+        "nome": "MANHA",
+        "peso": 25,
+        "intervalos": [
+          [
+            "08:00:00",
+            "10:00:00"
+          ],
+          [
+            "10:15:00",
+            "13:00:00"
+          ]
+        ]
+      },
+      {
+        "nome": "TARDE",
+        "peso": 30,
+        "intervalos": [
+          [
+            "13:00:00",
+            "15:00:00"
+          ],
+          [
+            "15:15:00",
+            "18:30:00"
+          ]
+        ]
+      },
+      {
+        "nome": "DIA_DIVIDIDO",
+        "peso": 20,
+        "intervalos": [
+          [
+            "09:00:00",
+            "12:00:00"
+          ],
+          [
+            "14:00:00",
+            "18:30:00"
+          ]
+        ]
+      }
+    ],
+    "pesos_filas_por_intervalo": {
+      "F01": 40,
+      "F02": 35,
+      "F03": 25
+    }
+  },
+  "indicadores": {
+    "sla_limite_segundos": 20,
+    "sla_denominador": "TODAS_RECEBIDAS",
+    "sla_regra_demonstrativa": true,
+    "tma_inclui_pos_atendimento": true
+  },
+  "exportacao": {
+    "encoding": "utf-8",
+    "separador": ",",
+    "quebra_linha": "\n",
+    "formato_data_hora": "%Y-%m-%d %H:%M:%S",
+    "valor_nulo": ""
+  }
+}
