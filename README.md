@@ -3,6 +3,7 @@
 
 **3.000 chamadas 100% sintéticas · oito atendentes · três filas**
 
+[Tutorial do zero: instalar, baixar, abrir e testar](portfolio/call-center-analytics-v1.8-rc1/README.md#tutorial-do-zero) ·
 [Conheça o projeto e veja as duas páginas](portfolio/call-center-analytics-v1.8-rc1/README.md) ·
 [Baixe a candidata v1.8 RC1](portfolio/call-center-analytics-v1.8-rc1/artifacts/CallCenterAnalytics_v1_8_RC1.zip) ·
 [Evidências e ressalvas do QA](portfolio/call-center-analytics-v1.8-rc1/docs/PARECER_QA_RECEBIDO.md)
