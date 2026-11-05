@@ -1,0 +1,53 @@
+{
+  "alteracoes": [
+    {
+      "arquivo": "projeto/CallCenterAnalytics.Report/.pbi/localSettings.json",
+      "antes": "5779c0924538fe7d9842996aee19cddd79e4859c72be34038e4c3b6621a380c0",
+      "depois": null
+    },
+    {
+      "arquivo": "projeto/CallCenterAnalytics.Report/definition/pages/atendentes/visuals/filtro_data/visual.json",
+      "antes": "c5d57758c298de8202ad8f0c1ac4024afa4c76fcc9eb7b5f9c3117af99eaef6c",
+      "depois": "434bcc6ef00faef8a3ed7522a16c27fc8eb89919f003b0e8cdb8cc2b746ab887"
+    },
+    {
+      "arquivo": "projeto/CallCenterAnalytics.Report/definition/pages/pages.json",
+      "antes": "f653022fffb99aeb68821d2f9dd1ea47a3138a5702bee7bfae155ff2befeebf9",
+      "depois": "556726eb3d1c2a5f9f41b212b022ae98832a57c56821344483c0351957c47abe"
+    },
+    {
+      "arquivo": "projeto/CallCenterAnalytics.Report/definition/pages/visao_geral/visuals/filtro_data/visual.json",
+      "antes": "8a582ad43a67fc8031cac53a1f1785327add6ecfd43890f9040e48fa7d8bb419",
+      "depois": "101bea6087c37d69d55fcace090adf2844eb6166acc4ebbeaf3d109a43e3eaef"
+    },
+    {
+      "arquivo": "projeto/CallCenterAnalytics.Report/definition/pages/visao_geral/visuals/filtro_fila/visual.json",
+      "antes": "dac1ac010acca1c45760bab8b567d1f582e70ccc41462acb48fa9dc1ec6880f2",
+      "depois": "c9f5338a44815726507900ac0b7ccd18fa6a1284f371bafb0e2e6887b2785a19"
+    },
+    {
+      "arquivo": "projeto/CallCenterAnalytics.SemanticModel/.pbi/cache.abf",
+      "antes": "2ca81f1aa6170e8c505b8b0ffd6d0d7213037fd2bb2170400bc50010ed1d9c89",
+      "depois": null
+    },
+    {
+      "arquivo": "projeto/CallCenterAnalytics.SemanticModel/.pbi/editorSettings.json",
+      "antes": "993662478760e2bcbc0184d6260711ae0b7cdb3867354581e7fd56609ca6ec97",
+      "depois": null
+    },
+    {
+      "arquivo": "projeto/CallCenterAnalytics.SemanticModel/.pbi/localSettings.json",
+      "antes": "48a828079a6c1a764ee672ab89cc2b860efd4cbf16db133fa632910d6538599d",
+      "depois": null
+    },
+    {
+      "arquivo": "projeto/CallCenterAnalytics.SemanticModel/definition/expressions.tmdl",
+      "antes": "21626fd0d59fe7e67287f42913d62c6bfbcba049447a409c9d4d89b4df83c7de",
+      "depois": "4c38658f14ed05fc3c3b0d14272da6b27e4b0efac42fd6bb31908bf9008fc72a"
+    }
+  ],
+  "arquivos_protegidos_identicos": 58,
+  "layout_estilos_queries_visuais_preservados": true,
+  "filtro_funcional_NAO_ATRIBUIDO": "page.json preservado byte a byte",
+  "testes_originais": "scripts preservados byte a byte"
+}

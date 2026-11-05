@@ -1,0 +1,100 @@
+[
+  {
+    "caso": "01_duplicidade",
+    "camada_esperada": "Python e M",
+    "python_executado": {
+      "status": "REJEITADO_COMO_ESPERADO",
+      "erro": "DUPLICIDADE: chamada_id"
+    },
+    "desktop": "PENDENTE"
+  },
+  {
+    "caso": "02_referencia",
+    "camada_esperada": "Python e M",
+    "python_executado": {
+      "status": "REJEITADO_COMO_ESPERADO",
+      "erro": "REFERENCIA: CH000001"
+    },
+    "desktop": "PENDENTE"
+  },
+  {
+    "caso": "03_obrigatorio",
+    "camada_esperada": "Python e M",
+    "python_executado": {
+      "status": "REJEITADO_COMO_ESPERADO",
+      "erro": "OBRIGATORIO: CH000001"
+    },
+    "desktop": "PENDENTE"
+  },
+  {
+    "caso": "04_calendario",
+    "camada_esperada": "Python e M",
+    "python_executado": {
+      "status": "REJEITADO_COMO_ESPERADO",
+      "erro": "CALENDARIO: CH000001"
+    },
+    "desktop": "PENDENTE"
+  },
+  {
+    "caso": "05_duracao",
+    "camada_esperada": "Python e M",
+    "python_executado": {
+      "status": "REJEITADO_COMO_ESPERADO",
+      "erro": "DURACAO: CH000001"
+    },
+    "desktop": "PENDENTE"
+  },
+  {
+    "caso": "06_ocupacao",
+    "camada_esperada": "Python obrigatório; não há bloqueio M equivalente declarado",
+    "python_executado": {
+      "status": "REJEITADO_COMO_ESPERADO",
+      "erro": "OCUPACAO_SOBREPOSTA: AT03/QA_OCUPACAO"
+    },
+    "desktop": "PENDENTE"
+  },
+  {
+    "caso": "07_disp_nao_utilizada",
+    "camada_esperada": "Python e M",
+    "python_executado": {
+      "status": "REJEITADO_COMO_ESPERADO",
+      "erro": "DISP_REFERENCIA: DISP000002"
+    },
+    "desktop": "PENDENTE"
+  },
+  {
+    "caso": "08_disp_sobreposta",
+    "camada_esperada": "Python e M",
+    "python_executado": {
+      "status": "REJEITADO_COMO_ESPERADO",
+      "erro": "DISP_SOBREPOSICAO: AT01/QA_DISP"
+    },
+    "desktop": "PENDENTE"
+  },
+  {
+    "caso": "09_sem_chamadas",
+    "camada_esperada": "Python PASS; M deve carregar; DAX: contagens 0, taxas e TMA em branco",
+    "python_executado": {
+      "status": "PASS",
+      "controles": {
+        "recebidas": 0,
+        "atendidas": 0,
+        "abandonadas": 0,
+        "taxa_abandono": null,
+        "tma_segundos": null,
+        "atendidas_20s": 0,
+        "sla": null
+      }
+    },
+    "desktop": "PENDENTE"
+  },
+  {
+    "caso": "10_sem_chamadas_disp_invalida",
+    "camada_esperada": "Python e M; validação global não pode depender de chamadas",
+    "python_executado": {
+      "status": "REJEITADO_COMO_ESPERADO",
+      "erro": "DISP_REFERENCIA: DISP000002"
+    },
+    "desktop": "PENDENTE"
+  }
+]

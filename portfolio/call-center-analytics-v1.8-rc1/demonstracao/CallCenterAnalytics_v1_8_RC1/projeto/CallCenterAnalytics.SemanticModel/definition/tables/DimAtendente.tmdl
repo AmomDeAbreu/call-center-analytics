@@ -1,0 +1,29 @@
+table DimAtendente
+	lineageTag: e8ffe049-16eb-51c8-823f-61fe68670c2f
+
+	column atendente_id
+		dataType: string
+		isHidden
+		isKey
+		lineageTag: 0344fde0-19d2-5ca0-ac5a-1d4c886e5e37
+		summarizeBy: none
+		sourceColumn: atendente_id
+
+	column atendente_nome
+		dataType: string
+		lineageTag: 1da7a7c3-aff7-57a1-aa0a-01f49c41f453
+		summarizeBy: none
+		sourceColumn: atendente_nome
+
+	partition DimAtendente = m
+		mode: import
+		source =
+				let
+				    Fonte = LerCSV("atendentes.csv", {"atendente_id", "atendente_nome"}, {{"atendente_id", type text}, {"atendente_nome", type text}}),
+				    Unica = if Table.RowCount(Fonte) = Table.RowCount(Table.Distinct(Fonte, {"atendente_id"})) and not List.Contains(Table.Column(Fonte, "atendente_id"), null) then Fonte else error "Chave invalida na dimensao",
+				    Final = Table.InsertRows(Unica, Table.RowCount(Unica), {[atendente_id="NAO_ATRIBUIDO", atendente_nome="Não atribuído"]})
+				in
+				    Final
+
+	annotation PBI_ResultType = Table
+

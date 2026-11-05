@@ -1,0 +1,13 @@
+{
+  "origem_sha256": "2416ab36852d4d75841319553de16cf2fe84ba7166fb5dc4c06b4cfbb5588892",
+  "Desktop_informado": "2.159.883.0 64-bit outubro 2026",
+  "locale_preservado_no_zip_recebido": true,
+  "mudancas_visuais": [
+    "projeto/CallCenterAnalytics.Report/definition/pages/visao_geral/visuals/kpi_2/visual.json",
+    "projeto/CallCenterAnalytics.Report/definition/pages/atendentes/visuals/tma/visual.json"
+  ],
+  "hipotese": "fontes/tamanho automático; causalidade não demonstrada",
+  "desktop_executado": false,
+  "renderizacao_validada": false,
+  "csvs_e_medidas_identicos": true
+}

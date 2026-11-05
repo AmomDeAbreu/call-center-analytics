@@ -1,0 +1,223 @@
+table FatoChamadas
+	lineageTag: 19a7b03d-6544-5991-8f5e-b2c4de5a5725
+
+	column chamada_id
+		dataType: string
+		isHidden
+		lineageTag: f3bc7e32-d79c-5d4a-bee5-4ef8c3a4ecdb
+		summarizeBy: none
+		sourceColumn: chamada_id
+
+	column fila_id
+		dataType: string
+		isHidden
+		lineageTag: f1a04a46-fd16-5a65-b9e7-b7f23444484e
+		summarizeBy: none
+		sourceColumn: fila_id
+
+	column entrada_em
+		dataType: dateTime
+		isHidden
+		formatString: dd/MM/yyyy HH:mm:ss
+		lineageTag: 65deacf9-54c4-52e7-a9b8-d2d0bb39e15c
+		summarizeBy: none
+		sourceColumn: entrada_em
+
+	column status
+		dataType: string
+		isHidden
+		lineageTag: 6db8086a-8e78-5d0e-8c2d-84028aa95bda
+		summarizeBy: none
+		sourceColumn: status
+
+	column atendente_id
+		dataType: string
+		isHidden
+		lineageTag: 0b859ccd-a3db-55f6-9516-0b0164b3996f
+		summarizeBy: none
+		sourceColumn: atendente_id
+
+	column disponibilidade_id
+		dataType: string
+		isHidden
+		lineageTag: b7198c52-ee45-5ffe-a359-4651ccc9f9a9
+		summarizeBy: none
+		sourceColumn: disponibilidade_id
+
+	column inicio_atendimento_em
+		dataType: dateTime
+		isHidden
+		formatString: dd/MM/yyyy HH:mm:ss
+		lineageTag: db9899f3-be0c-555f-90e8-3fc4414fb64a
+		summarizeBy: none
+		sourceColumn: inicio_atendimento_em
+
+	column saida_em
+		dataType: dateTime
+		isHidden
+		formatString: dd/MM/yyyy HH:mm:ss
+		lineageTag: 3aa36ad1-6933-53ae-bcc8-57944d6664da
+		summarizeBy: none
+		sourceColumn: saida_em
+
+	column pos_atendimento_segundos
+		dataType: int64
+		isHidden
+		lineageTag: eff6b992-57a8-515b-8a2e-6111edf06c08
+		summarizeBy: none
+		sourceColumn: pos_atendimento_segundos
+
+	column tolerancia_espera_segundos
+		dataType: int64
+		isHidden
+		lineageTag: aba98f73-4d4d-5ba0-8f34-add49b4fdca3
+		summarizeBy: none
+		sourceColumn: tolerancia_espera_segundos
+
+	column duracao_contato_planejada_segundos
+		dataType: int64
+		isHidden
+		lineageTag: 35e420a7-2826-503d-bde7-4fd8dba4169b
+		summarizeBy: none
+		sourceColumn: duracao_contato_planejada_segundos
+
+	column pos_atendimento_planejado_segundos
+		dataType: int64
+		isHidden
+		lineageTag: 7421bc2c-b3cc-5bda-a038-98b45212a778
+		summarizeBy: none
+		sourceColumn: pos_atendimento_planejado_segundos
+
+	column motivo_abandono
+		dataType: string
+		isHidden
+		lineageTag: a9e8f591-2015-53a7-960f-8dc7d2607120
+		summarizeBy: none
+		sourceColumn: motivo_abandono
+
+	column data_entrada
+		dataType: dateTime
+		isHidden
+		formatString: dd/MM/yyyy
+		lineageTag: c6b53d94-d938-522c-bc88-19ad8f6a7678
+		summarizeBy: none
+		sourceColumn: data_entrada
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column hora_entrada
+		dataType: int64
+		lineageTag: d6dc4a8a-375d-501d-b747-c6c79b608d79
+		summarizeBy: none
+		sourceColumn: hora_entrada
+
+	column espera_segundos
+		dataType: int64
+		isHidden
+		lineageTag: e9fc8d24-2a36-5d0c-989a-6aeb6d83c79b
+		summarizeBy: none
+		sourceColumn: espera_segundos
+
+	column duracao_atendimento_segundos
+		dataType: int64
+		isHidden
+		lineageTag: d51f300e-548c-5c5c-ae25-ecd60941de84
+		summarizeBy: none
+		sourceColumn: duracao_atendimento_segundos
+
+	column tempo_total_atendimento_segundos
+		dataType: int64
+		isHidden
+		lineageTag: 34c7b3e9-99c3-53d6-a464-52d94cc849fd
+		summarizeBy: none
+		sourceColumn: tempo_total_atendimento_segundos
+
+	column fim_pos_atendimento_em
+		dataType: dateTime
+		isHidden
+		formatString: dd/MM/yyyy HH:mm:ss
+		lineageTag: 79ee99c8-6061-5887-b4bf-202b4d1d200c
+		summarizeBy: none
+		sourceColumn: fim_pos_atendimento_em
+
+	column atendida_ate_20s
+		dataType: boolean
+		isHidden
+		lineageTag: 3f6df719-d30c-5396-a144-fb5f8c0ab813
+		summarizeBy: none
+		sourceColumn: atendida_ate_20s
+
+	partition FatoChamadas = m
+		mode: import
+		source =
+				let
+				    Fonte = LerCSV("chamadas.csv", {"chamada_id", "fila_id", "entrada_em", "status", "atendente_id", "disponibilidade_id", "inicio_atendimento_em", "saida_em", "pos_atendimento_segundos", "tolerancia_espera_segundos", "duracao_contato_planejada_segundos", "pos_atendimento_planejado_segundos", "motivo_abandono"}, {{"chamada_id", type text}, {"fila_id", type text}, {"entrada_em", type datetime}, {"status", type text}, {"atendente_id", type text}, {"disponibilidade_id", type text}, {"inicio_atendimento_em", type datetime}, {"saida_em", type datetime}, {"pos_atendimento_segundos", Int64.Type}, {"tolerancia_espera_segundos", Int64.Type}, {"duracao_contato_planejada_segundos", Int64.Type}, {"pos_atendimento_planejado_segundos", Int64.Type}, {"motivo_abandono", type text}}),
+				    Unica = if Table.RowCount(Fonte) = Table.RowCount(Table.Distinct(Fonte, {"chamada_id"})) then Fonte else error "chamada_id duplicado",
+				    DisponibilidadesFonte = LerCSV("disponibilidade_atendentes.csv", {"disponibilidade_id", "atendente_id", "fila_id", "inicio_disponibilidade_em", "fim_disponibilidade_em"}, {{"disponibilidade_id", type text}, {"atendente_id", type text}, {"fila_id", type text}, {"inicio_disponibilidade_em", type datetime}, {"fim_disponibilidade_em", type datetime}}),
+				    DispBuffer = Table.Buffer(DisponibilidadesFonte),
+				    DispUnica = if Table.RowCount(DispBuffer) = Table.RowCount(Table.Distinct(DispBuffer, {"disponibilidade_id"})) then DispBuffer else error "DISP_DUPLICADA: disponibilidade_id duplicado",
+				    DispValidada = Table.AddColumn(DispUnica, "Valida", (d) =>
+				        let
+				            Falha = (m as text) => error Error.Record("Integridade de disponibilidades", m, [disponibilidade_id=d[disponibilidade_id]]),
+				            I = d[inicio_disponibilidade_em], F = d[fim_disponibilidade_em],
+				            Conflitos = Table.SelectRows(DispBuffer, (e) => e[atendente_id] = d[atendente_id] and e[disponibilidade_id] <> d[disponibilidade_id] and e[inicio_disponibilidade_em] < F and e[fim_disponibilidade_em] > I)
+				        in
+				            if List.Contains(Record.FieldValues(d), null) then Falha("DISP_OBRIGATORIO: campo vazio")
+				            else if not List.Contains(DimFila[fila_id], d[fila_id]) or d[atendente_id] = "NAO_ATRIBUIDO" or not List.Contains(DimAtendente[atendente_id], d[atendente_id]) then Falha("DISP_REFERENCIA: chave desconhecida")
+				            else if F <= I or Date.From(I) <> Date.From(F) then Falha("DISP_INTERVALO: intervalo invalido")
+				            else if Date.From(I) < #date(2026,1,1) or Date.From(I) > #date(2026,3,31) or Time.From(I) < #time(8,0,0) or Time.From(F) > #time(18,30,0) then Falha("DISP_ESCOPO: fora do periodo ou horario")
+				            else if not Table.IsEmpty(Conflitos) then Falha("DISP_SOBREPOSICAO: ocupacao simultanea de disponibilidades")
+				            else true, type logical),
+				    Disponibilidades = if List.AllTrue(DispValidada[Valida]) then Table.RemoveColumns(DispValidada, {"Valida"}) else error "DISP_INVALIDA",
+				    FonteValidada = if Table.RowCount(Disponibilidades) >= 0 then Unica else error "DISP_INVALIDA",
+				    Verificada = Table.AddColumn(FonteValidada, "RegistroValido", each
+				        let
+				            Falha = (mensagem as text) => error Error.Record("Integridade de chamadas", mensagem, [chamada_id=[chamada_id]]),
+				            Obrigatorios = {[chamada_id], [fila_id], [entrada_em], [saida_em], [status], [tolerancia_espera_segundos], [duracao_contato_planejada_segundos], [pos_atendimento_planejado_segundos]},
+				            A = [status] = "ATENDIDA",
+				            Inicio = [inicio_atendimento_em], Saida = [saida_em], Entrada = [entrada_em],
+				            Limite = Entrada + #duration(0,0,0,[tolerancia_espera_segundos]),
+				            Fechamento = DateTime.From(Date.From(Entrada)) + #duration(0,18,0,0),
+				            IDDisp = [disponibilidade_id],
+				            Disp = Table.SelectRows(Disponibilidades, (d) => d[disponibilidade_id] = IDDisp),
+				            Contato = [duracao_contato_planejada_segundos],
+				            MinContato = if [fila_id] = "F01" then 30 else if [fila_id] = "F02" then 180 else 120,
+				            MaxContato = if [fila_id] = "F01" then 300 else if [fila_id] = "F02" then 1200 else 900
+				        in
+				            if List.Contains(Obrigatorios, null) then Falha("Campo obrigatorio vazio")
+				            else if not List.Contains(DimFila[fila_id], [fila_id]) then Falha("Fila inexistente")
+				            else if Date.From(Entrada) < #date(2026,1,1) or Date.From(Entrada) > #date(2026,3,31) then Falha("Data fora dos 90 dias")
+				            else if Time.From(Entrada) < #time(8,0,0) or Time.From(Entrada) >= #time(18,0,0) then Falha("Entrada fora do horario")
+				            else if Date.From(Saida) <> Date.From(Entrada) then Falha("Saida em outro dia")
+				            else if [tolerancia_espera_segundos] < 5 or [tolerancia_espera_segundos] > 600 then Falha("Tolerancia fora dos limites")
+				            else if Contato < MinContato or Contato > MaxContato or [pos_atendimento_planejado_segundos] < 0 or [pos_atendimento_planejado_segundos] > 180 then Falha("Tempos planejados invalidos")
+				            else if A then
+				                if List.Contains({[atendente_id],IDDisp,Inicio,[pos_atendimento_segundos]}, null) then Falha("Atendida incompleta")
+				                else if [atendente_id] = "NAO_ATRIBUIDO" or not List.Contains(DimAtendente[atendente_id], [atendente_id]) then Falha("Atendente inexistente")
+				                else if [motivo_abandono] <> null then Falha("Atendida com motivo de abandono")
+				                else if Inicio < Entrada or Inicio > Limite or Inicio >= Fechamento or Saida <= Inicio then Falha("Horario de atendimento invalido")
+				                else if Duration.TotalSeconds(Saida-Inicio) <> Contato or [pos_atendimento_segundos] <> [pos_atendimento_planejado_segundos] then Falha("Duracao realizada divergente")
+				                else if Table.RowCount(Disp) <> 1 then Falha("Disponibilidade ausente ou duplicada")
+				                else if Disp{0}[atendente_id] <> [atendente_id] or Disp{0}[fila_id] <> [fila_id] then Falha("Disponibilidade de outro atendente ou fila")
+				                else if Inicio < Disp{0}[inicio_disponibilidade_em] or Saida + #duration(0,0,0,[pos_atendimento_segundos]) > Disp{0}[fim_disponibilidade_em] or Saida + #duration(0,0,0,[pos_atendimento_segundos]) > Fechamento + #duration(0,0,30,0) then Falha("Ocupacao fora da disponibilidade")
+				                else true
+				            else if [status] = "ABANDONADA" then
+				                if List.NonNullCount({[atendente_id],IDDisp,Inicio,[pos_atendimento_segundos]}) <> 0 then Falha("Abandonada com atendimento")
+				                else if Saida <= Entrada then Falha("Abandono antes da entrada")
+				                else if Saida <> List.Min({Limite,Fechamento}) then Falha("Instante de abandono incorreto")
+				                else if [motivo_abandono] <> (if Limite < Fechamento then "DESISTENCIA" else "FECHAMENTO") then Falha("Motivo de abandono incorreto")
+				                else true
+				            else Falha("Status invalido"), type logical),
+				    Forcada = Table.SelectRows(Verificada, each [RegistroValido] = true),
+				    Limpa = Table.RemoveColumns(Forcada, {"RegistroValido"}),
+				    Agente = Table.TransformColumns(Limpa, {{"atendente_id", each if _ = null then "NAO_ATRIBUIDO" else _, type text}}),
+				    Data = Table.AddColumn(Agente, "data_entrada", each Date.From([entrada_em]), type date),
+				    Hora = Table.AddColumn(Data, "hora_entrada", each Time.Hour(Time.From([entrada_em])), Int64.Type),
+				    Espera = Table.AddColumn(Hora, "espera_segundos", each Duration.TotalSeconds((if [status] = "ATENDIDA" then [inicio_atendimento_em] else [saida_em]) - [entrada_em]), Int64.Type),
+				    Contato = Table.AddColumn(Espera, "duracao_atendimento_segundos", each if [status] = "ATENDIDA" then Duration.TotalSeconds([saida_em] - [inicio_atendimento_em]) else null, Int64.Type),
+				    Total = Table.AddColumn(Contato, "tempo_total_atendimento_segundos", each if [status] = "ATENDIDA" then [duracao_atendimento_segundos] + [pos_atendimento_segundos] else null, Int64.Type),
+				    Fim = Table.AddColumn(Total, "fim_pos_atendimento_em", each if [status] = "ATENDIDA" then [saida_em] + #duration(0,0,0,[pos_atendimento_segundos]) else null, type datetime),
+				    SLA = Table.AddColumn(Fim, "atendida_ate_20s", each [status] = "ATENDIDA" and [espera_segundos] <= 20, type logical)
+				in
+				    SLA
+

@@ -1,0 +1,22 @@
+{
+  "versao": "1.7",
+  "origem_sha256": "e6acbd358197e05765570932031cb9891332ef9c7917773b55ae82719916fa2c",
+  "python": "3.12.14",
+  "preservados_byte_a_byte": {
+    "chamadas.csv": true,
+    "atendentes.csv": true,
+    "filas.csv": true,
+    "disponibilidade_atendentes.csv": true,
+    "projeto/CallCenterAnalytics.SemanticModel/definition/tables/Medidas.tmdl": true,
+    "projeto/CallCenterAnalytics.SemanticModel/definition/tables/FatoChamadas.tmdl": true
+  },
+  "regressao": {
+    "passaram": 50,
+    "total": 50
+  },
+  "suite_validador": 13,
+  "casos_csv_recarregados": 10,
+  "desktop_executado": false,
+  "M_DAX_executados": false,
+  "gerador_original_incluido": false
+}

@@ -1,0 +1,12 @@
+{
+  "busca_textual": {
+    "caminho_usuario": "(?i)([A-Z]:\\\\Users\\\\|/home/[^ /]+/|/Users/[^ /]+/)",
+    "chave_privada": "-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----",
+    "token": "(?:gh[pousr]_[A-Za-z0-9]{20,}|AKIA[A-Z0-9]{16})",
+    "credencial_atribuida": "(?i)(?:password|passwd|client_secret|access_token)\\s*[=:]\\s*[\"\\x27][^\"\\x27\\s]{6,}"
+  },
+  "achados": [],
+  "avaliacao": "Ocorrências em regressao_qa.py são literal genérico de detecção de caminhos, não parâmetro pessoal. Nenhuma credencial detectada nos padrões pesquisados; não é garantia absoluta.",
+  "arquivos_locais_indevidos": [],
+  "jsons_interpretados": 55
+}

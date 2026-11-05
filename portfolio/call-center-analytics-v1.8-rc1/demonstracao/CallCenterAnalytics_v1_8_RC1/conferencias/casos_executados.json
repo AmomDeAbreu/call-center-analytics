@@ -1,0 +1,90 @@
+[
+  {
+    "caso": "01_duplicidade",
+    "camada": "Python, não M/DAX",
+    "esperado": "DUPLICIDADE",
+    "observado": "DUPLICIDADE",
+    "resultado": "PASS",
+    "detalhe": "DUPLICIDADE: chamada_id"
+  },
+  {
+    "caso": "02_referencia",
+    "camada": "Python, não M/DAX",
+    "esperado": "REFERENCIA",
+    "observado": "REFERENCIA",
+    "resultado": "PASS",
+    "detalhe": "REFERENCIA: CH000001"
+  },
+  {
+    "caso": "03_obrigatorio",
+    "camada": "Python, não M/DAX",
+    "esperado": "OBRIGATORIO",
+    "observado": "OBRIGATORIO",
+    "resultado": "PASS",
+    "detalhe": "OBRIGATORIO: CH000001"
+  },
+  {
+    "caso": "04_calendario",
+    "camada": "Python, não M/DAX",
+    "esperado": "CALENDARIO",
+    "observado": "CALENDARIO",
+    "resultado": "PASS",
+    "detalhe": "CALENDARIO: CH000001"
+  },
+  {
+    "caso": "05_duracao",
+    "camada": "Python, não M/DAX",
+    "esperado": "DURACAO",
+    "observado": "DURACAO",
+    "resultado": "PASS",
+    "detalhe": "DURACAO: CH000001"
+  },
+  {
+    "caso": "06_ocupacao",
+    "camada": "Python, não M/DAX",
+    "esperado": "OCUPACAO_SOBREPOSTA",
+    "observado": "OCUPACAO_SOBREPOSTA",
+    "resultado": "PASS",
+    "detalhe": "OCUPACAO_SOBREPOSTA: AT03/QA_OCUPACAO"
+  },
+  {
+    "caso": "07_disp_nao_utilizada",
+    "camada": "Python, não M/DAX",
+    "esperado": "DISP_REFERENCIA",
+    "observado": "DISP_REFERENCIA",
+    "resultado": "PASS",
+    "detalhe": "DISP_REFERENCIA: DISP000002"
+  },
+  {
+    "caso": "08_disp_sobreposta",
+    "camada": "Python, não M/DAX",
+    "esperado": "DISP_SOBREPOSICAO",
+    "observado": "DISP_SOBREPOSICAO",
+    "resultado": "PASS",
+    "detalhe": "DISP_SOBREPOSICAO: AT01/QA_DISP"
+  },
+  {
+    "caso": "09_sem_chamadas",
+    "camada": "Python, não M/DAX",
+    "esperado": "PASS",
+    "observado": "PASS",
+    "resultado": "PASS",
+    "detalhe": {
+      "recebidas": 0,
+      "atendidas": 0,
+      "abandonadas": 0,
+      "taxa_abandono": null,
+      "tma_segundos": null,
+      "atendidas_20s": 0,
+      "sla": null
+    }
+  },
+  {
+    "caso": "10_sem_chamadas_disp_invalida",
+    "camada": "Python, não M/DAX",
+    "esperado": "DISP_REFERENCIA",
+    "observado": "DISP_REFERENCIA",
+    "resultado": "PASS",
+    "detalhe": "DISP_REFERENCIA: DISP000002"
+  }
+]

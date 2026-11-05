@@ -1,0 +1,28 @@
+table DimFila
+	lineageTag: ae9e20a9-38f0-5cf4-94a6-853bb316826c
+
+	column fila_id
+		dataType: string
+		isHidden
+		isKey
+		lineageTag: e474cc6f-28e4-59c1-a574-25b4079134e4
+		summarizeBy: none
+		sourceColumn: fila_id
+
+	column fila_nome
+		dataType: string
+		lineageTag: 36a0f02d-54be-58ea-b721-92289c99c0b7
+		summarizeBy: none
+		sourceColumn: fila_nome
+
+	partition DimFila = m
+		mode: import
+		source =
+				let
+				    Fonte = LerCSV("filas.csv", {"fila_id", "fila_nome"}, {{"fila_id", type text}, {"fila_nome", type text}}),
+				    Unica = if Table.RowCount(Fonte) = Table.RowCount(Table.Distinct(Fonte, {"fila_id"})) and not List.Contains(Table.Column(Fonte, "fila_id"), null) then Fonte else error "Chave invalida na dimensao"
+				in
+				    Unica
+
+	annotation PBI_ResultType = Table
+

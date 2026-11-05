@@ -1,0 +1,13 @@
+{
+  "name": "Call Center Analytics",
+  "dataColors": [
+    "#285F82",
+    "#087F8C",
+    "#B45332",
+    "#675A7C",
+    "#526574"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#243746",
+  "tableAccent": "#285F82"
+}

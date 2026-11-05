@@ -1,0 +1,45 @@
+CALL CENTER ANALYTICS v1.8 RC1 — CANDIDATA FINAL PARA DECISÃO DO QA
+
+Escopo: demonstração com dados 100% sintéticos. Não publicada. Não aprovada pelo autor em nome do QA.
+Entrada: CallCenterAnalytics_v1_7_QA(4).zip
+SHA-256 entrada: b9fa8a60fd4e55bf1ffbbc50c23aa9375c57a1d0f3d9b5ad8116fdea9aea23b3
+
+PREPARAÇÃO
+Cache e configurações .pbi removidos. Visão geral é a página inicial.
+Seleções de teste removidas; Between preservado nas duas páginas.
+Filtro funcional de exclusão NAO_ATRIBUIDO preservado.
+PastaDados = C:\CallCenterAnalytics\dados (exemplo neutro).
+Para uso, configurar PastaDados para a pasta com os quatro CSVs da raiz.
+Arquivos de casos_desktop são cópias deliberadamente alteradas e não são a base de demonstração.
+CSV, DAX, demais TMDL, layout, paleta e consultas dos visuais preservados.
+Somente o valor de PastaDados foi alterado no código M.
+
+VALIDAÇÃO EXTERNA OBRIGATÓRIA
+Antes de cada atualização normal, validar os bytes exatos dos quatro CSVs com:
+python -B validacao/validar.py PASTA_DOS_CSVS
+Prosseguir apenas com código de saída 0 / PASS e usar os mesmos bytes no Desktop.
+Sobreposição de ocupações depende desta camada externa; não há bloqueio M equivalente declarado.
+Esta regra é operacional. O Desktop não invoca automaticamente o Python.
+
+VERIFICAÇÕES REPRODUZÍVEIS (na raiz extraída)
+python -B validacao/conferir_manifesto.py
+python -B validacao/validar.py .
+python -B validacao/testar.py
+python -B validacao/regressao_qa.py
+Python 3.10+; execução desta revisão: 3.12.14, biblioteca padrão, sem serviços pagos.
+Usar -B evita __pycache__. Não redirecionar saídas para dentro da distribuição.
+O manifesto exclui somente ele próprio. Abrir/salvar no Desktop e configurar o parâmetro
+altera o pacote: preservar ZIP original e distinguir cópia de trabalho de distribuição.
+
+RESULTADOS E LIMITES
+Validador PASS; 13/13 testes externos; 50/50 regressão SQL/estrutura.
+Dez conjuntos controlados testados em Python. KPIs recalculados independentemente.
+Dados originais: 3000/1959/1041; tempo total 941831 s; SLA 1846/3000.
+Resultados e hashes dos arquivos testados em conferencias/.
+Nenhuma execução de Desktop, M ou DAX nesta revisão. Não há novas capturas fabricadas.
+Gerador, config.json, commit e suíte original indisponíveis: regeneração e FIFO não executados.
+Não confundir 13 testes externos com 28 testes originais do simulador.
+ROTEIRO_DESKTOP.txt é especificação de aceite; o restante impossível está registrado como NÃO EXECUTADO.
+Nenhuma tarefa manual está sendo transferida ao responsável nesta entrega.
+Registros anteriores em historico/ são somente históricos; não comprovam a candidata atual.
+Decisão de publicação pertence ao QA.

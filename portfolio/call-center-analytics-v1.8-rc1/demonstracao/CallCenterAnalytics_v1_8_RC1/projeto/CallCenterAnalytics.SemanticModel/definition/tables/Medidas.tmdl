@@ -1,0 +1,86 @@
+table Medidas
+	lineageTag: d9c312bf-b654-5533-ba1f-b8bf52befced
+
+	measure 'Recebidas base' = COALESCE(CALCULATE(COUNTROWS(FatoChamadas), REMOVEFILTERS(FatoChamadas[status])), 0)
+		formatString: #,0
+		isHidden
+		lineageTag: feda1f1a-ceda-5a50-aacc-5f8801965d80
+
+	measure 'Atendidas base' = COALESCE(CALCULATE(COUNTROWS(FatoChamadas), FatoChamadas[status] = "ATENDIDA"), 0)
+		formatString: #,0
+		isHidden
+		lineageTag: 7e76cb1e-2782-54c0-930a-29933e364ddb
+
+	measure 'Abandonadas base' = COALESCE(CALCULATE(COUNTROWS(FatoChamadas), FatoChamadas[status] = "ABANDONADA"), 0)
+		formatString: #,0
+		isHidden
+		lineageTag: 86078b94-4539-5c63-9e24-84bea96c8d23
+
+	measure 'Ate 20s base' = COALESCE(CALCULATE(COUNTROWS(FatoChamadas), FatoChamadas[status] = "ATENDIDA", FatoChamadas[atendida_ate_20s] = TRUE()), 0)
+		formatString: #,0
+		isHidden
+		lineageTag: 6a616ccf-8ef1-56ba-b097-48ce3af2c14c
+
+	measure 'Tempo base' = CALCULATE(SUM(FatoChamadas[tempo_total_atendimento_segundos]), FatoChamadas[status] = "ATENDIDA")
+		formatString: #,0
+		isHidden
+		lineageTag: 4c878ea7-2076-54f0-8327-4c463a42d082
+
+	measure Recebidas = CALCULATE([Recebidas base], REMOVEFILTERS(DimAtendente), REMOVEFILTERS(FatoChamadas[atendente_id]))
+		formatString: #,0
+		lineageTag: ffd538b9-d087-53f9-9c28-e210fc8a18e3
+
+	measure Atendidas = CALCULATE([Atendidas base], REMOVEFILTERS(DimAtendente), REMOVEFILTERS(FatoChamadas[atendente_id]))
+		formatString: #,0
+		lineageTag: c8ed3920-fa48-5d8e-926f-660cb70d8592
+
+	measure Abandonadas = CALCULATE([Abandonadas base], REMOVEFILTERS(DimAtendente), REMOVEFILTERS(FatoChamadas[atendente_id]))
+		formatString: #,0
+		lineageTag: 7e80acff-fbc4-5db7-ba9f-2e7ada507179
+
+	measure 'Atendidas ate 20s' = CALCULATE([Ate 20s base], REMOVEFILTERS(DimAtendente), REMOVEFILTERS(FatoChamadas[atendente_id]))
+		formatString: #,0
+		lineageTag: e7365efa-1766-5006-a7b0-70ab1a4d77d4
+
+	/// Inclui desistencias e fechamento; ignora atendente.
+	measure 'Taxa de abandono' = DIVIDE([Abandonadas], [Recebidas])
+		formatString: 0.00%
+		lineageTag: 3c472d0a-4831-547f-a2a2-c4255faf467c
+
+	/// Atendidas com espera ate 20 segundos sobre TODAS as recebidas. Regra demonstrativa, nao padrao universal.
+	measure 'SLA demonstrativo' = DIVIDE([Atendidas ate 20s], [Recebidas])
+		formatString: 0.00%
+		lineageTag: dd9e8149-d61c-5f4c-90be-14672385a26d
+
+	/// Contato mais pos-atendimento. Exclui espera e abandonadas.
+	measure 'TMA segundos' = DIVIDE(CALCULATE([Tempo base], REMOVEFILTERS(DimAtendente), REMOVEFILTERS(FatoChamadas[atendente_id])), [Atendidas])
+		formatString: 0.00
+		lineageTag: 70ff7ec4-1239-5a58-9cc2-9d4c0df133b9
+
+	measure 'TMA minutos' = DIVIDE([TMA segundos], 60)
+		formatString: 0.00" min"
+		lineageTag: aceaa460-802f-58f5-a080-001000d19866
+
+	measure 'Atendidas por atendente' = [Atendidas base]
+		formatString: #,0
+		lineageTag: c2efcc6b-9b71-525c-9a38-14b66567652d
+
+	measure 'TMA segundos por atendente' = DIVIDE([Tempo base], [Atendidas base])
+		formatString: 0.00
+		lineageTag: bdf12d72-d7c6-53bb-b68b-5fa79405f500
+
+	measure 'TMA minutos por atendente' = DIVIDE([TMA segundos por atendente], 60)
+		formatString: 0.00" min"
+		lineageTag: ed86fc9b-27b5-5896-b7b1-dff91918eb40
+
+	column _ancora
+		dataType: int64
+		isHidden
+		lineageTag: e81a3fb2-93d2-5a62-9d5e-29eca6ff367e
+		summarizeBy: none
+		sourceColumn: _ancora
+
+	partition Medidas = m
+		mode: import
+		source = #table(type table [_ancora = Int64.Type], {{1}})
+

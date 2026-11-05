@@ -1,0 +1,68 @@
+{
+  "camada": "Python; não comprova execução M",
+  "testes": [
+    {
+      "caso": "base original",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "chamada duplicada",
+      "resultado": "PASS",
+      "rejeicao": "DUPLICIDADE: chamada_id"
+    },
+    {
+      "caso": "fila desconhecida",
+      "resultado": "PASS",
+      "rejeicao": "REFERENCIA: CH000001"
+    },
+    {
+      "caso": "obrigatorio vazio",
+      "resultado": "PASS",
+      "rejeicao": "OBRIGATORIO: CH000001"
+    },
+    {
+      "caso": "01 abril",
+      "resultado": "PASS",
+      "rejeicao": "CALENDARIO: CH000001"
+    },
+    {
+      "caso": "pos negativo",
+      "resultado": "PASS",
+      "rejeicao": "DURACAO: CH000001"
+    },
+    {
+      "caso": "ocupacao sobreposta",
+      "resultado": "PASS",
+      "rejeicao": "OCUPACAO_SOBREPOSTA: AT03/CH_NOVA"
+    },
+    {
+      "caso": "disponibilidade nao utilizada com fila desconhecida",
+      "resultado": "PASS",
+      "rejeicao": "DISP_REFERENCIA: DISP000002"
+    },
+    {
+      "caso": "disponibilidade nao utilizada invertida",
+      "resultado": "PASS",
+      "rejeicao": "DISP_INTERVALO: DISP000002"
+    },
+    {
+      "caso": "nova disponibilidade nao referenciada sobreposta",
+      "resultado": "PASS",
+      "rejeicao": "DISP_SOBREPOSICAO: AT01/DISP_NOVA"
+    },
+    {
+      "caso": "disponibilidade duplicada",
+      "resultado": "PASS",
+      "rejeicao": "DUPLICIDADE: disponibilidade_id"
+    },
+    {
+      "caso": "sem chamadas, disponibilidades ainda validadas",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "sem chamadas e disponibilidade invalida",
+      "resultado": "PASS",
+      "rejeicao": "DISP_REFERENCIA: DISP000001"
+    }
+  ]
+}

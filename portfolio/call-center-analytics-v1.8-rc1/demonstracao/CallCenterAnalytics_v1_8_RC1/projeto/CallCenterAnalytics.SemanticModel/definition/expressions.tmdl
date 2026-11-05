@@ -1,0 +1,18 @@
+expression PastaDados = "C:\CallCenterAnalytics\dados" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 5d587958-6787-5ac2-b999-8eca4ff808be
+
+	annotation PBI_ResultType = Text
+
+expression LerCSV =
+		(nome as text, colunas as list, tipos as list) as table =>
+		let
+		    Caminho = PastaDados & (if Text.EndsWith(PastaDados, "\") then "" else "\") & nome,
+		    Fonte = Csv.Document(File.Contents(Caminho), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+		    Cabecalhos = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+		    Conferida = if Table.ColumnNames(Cabecalhos) = colunas then Cabecalhos else error Error.Record("Estrutura CSV", "Colunas divergentes: " & nome, Table.ColumnNames(Cabecalhos)),
+		    Nulos = Table.ReplaceValue(Conferida, "", null, Replacer.ReplaceValue, colunas),
+		    Tipada = Table.TransformColumnTypes(Nulos, tipos, "en-US")
+		in
+		    Tipada
+	lineageTag: 0a7dc3c2-34bb-5ca4-84e6-fa2d0c7cf26b
+
