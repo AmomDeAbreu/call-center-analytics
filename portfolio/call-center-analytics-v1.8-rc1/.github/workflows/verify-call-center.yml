@@ -1,0 +1,19 @@
+name: Verificar candidata Call Center
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Conferir ZIP, extração, manifesto e validadores
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python3 -B scripts/check_candidate.py

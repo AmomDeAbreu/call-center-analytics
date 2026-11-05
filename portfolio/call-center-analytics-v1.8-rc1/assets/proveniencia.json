@@ -1,0 +1,16 @@
+[
+  {
+    "arquivo": "visao-geral.png",
+    "origem": "image(20261028-171705).png",
+    "sha256": "298fd96119b41cabc7c49645de38f0c985f3f5d0b92553b966d2d737cc14efcc",
+    "tipo": "captura real fornecida pelo usuário, sem edição",
+    "limite": "captura anterior à candidata final; filtro mostrado em Dropdown, candidata usa Between"
+  },
+  {
+    "arquivo": "atendentes.png",
+    "origem": "image(20261028-224007).png",
+    "sha256": "c36a47517f0473b03ed7391c8f34729f28e35e2f09a36a530f7427808a623a86",
+    "tipo": "captura real fornecida pelo usuário, sem edição",
+    "limite": "captura anterior à candidata final; filtro mostrado em Dropdown, candidata usa Between"
+  }
+]

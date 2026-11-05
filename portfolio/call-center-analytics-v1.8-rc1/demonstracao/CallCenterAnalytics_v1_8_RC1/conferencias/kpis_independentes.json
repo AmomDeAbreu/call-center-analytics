@@ -1,0 +1,83 @@
+[
+  {
+    "teste": "global",
+    "camada": "Python independente sobre CSV",
+    "esperado": {
+      "recebidas": 3000,
+      "atendidas": 1959,
+      "abandonadas": 1041,
+      "tempo_total_s": 941831,
+      "ate_20s": 1846
+    },
+    "observado": {
+      "recebidas": 3000,
+      "atendidas": 1959,
+      "abandonadas": 1041,
+      "tempo_total_s": 941831,
+      "ate_20s": 1846,
+      "tma_s": 480.7713118938234,
+      "abandono": 0.347,
+      "sla": 0.6153333333333333
+    },
+    "resultado": "PASS"
+  },
+  {
+    "teste": "F02",
+    "camada": "Python independente sobre CSV",
+    "esperado": {
+      "recebidas": 1070,
+      "atendidas": 655,
+      "tempo_total_s": 490318
+    },
+    "observado": {
+      "recebidas": 1070,
+      "atendidas": 655,
+      "abandonadas": 415,
+      "tempo_total_s": 490318,
+      "ate_20s": 602,
+      "tma_s": 748.5770992366412,
+      "abandono": 0.3878504672897196,
+      "sla": 0.5626168224299065
+    },
+    "resultado": "PASS"
+  },
+  {
+    "teste": "fevereiro",
+    "camada": "Python independente sobre CSV",
+    "esperado": {
+      "recebidas": 889,
+      "atendidas": 574,
+      "tempo_total_s": 257732
+    },
+    "observado": {
+      "recebidas": 889,
+      "atendidas": 574,
+      "abandonadas": 315,
+      "tempo_total_s": 257732,
+      "ate_20s": 550,
+      "tma_s": 449.01045296167246,
+      "abandono": 0.3543307086614173,
+      "sla": 0.6186726659167604
+    },
+    "resultado": "PASS"
+  },
+  {
+    "teste": "AT01",
+    "camada": "Python independente sobre CSV",
+    "esperado": {
+      "atendidas": 244,
+      "tempo_total_s": 105938
+    },
+    "observado": {
+      "recebidas": 244,
+      "atendidas": 244,
+      "abandonadas": 0,
+      "tempo_total_s": 105938,
+      "ate_20s": 234,
+      "tma_s": 434.172131147541,
+      "abandono": 0.0,
+      "sla": 0.9590163934426229
+    },
+    "resultado": "PASS"
+  }
+]

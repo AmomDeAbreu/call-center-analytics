@@ -1,0 +1,12 @@
+relationship f23d2dd9-9238-5bf9-b83b-d36f31ab7bf9
+	fromColumn: FatoChamadas.data_entrada
+	toColumn: DimData.Data
+
+relationship 4b391ceb-5f13-5266-8213-8cb0945490ed
+	fromColumn: FatoChamadas.fila_id
+	toColumn: DimFila.fila_id
+
+relationship fd52b150-6bf8-59ff-a9f4-590258d3fb56
+	fromColumn: FatoChamadas.atendente_id
+	toColumn: DimAtendente.atendente_id
+

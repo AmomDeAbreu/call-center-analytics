@@ -1,0 +1,74 @@
+[
+  {
+    "teste": "atualização M com CSVs validados",
+    "camada": "Power BI Desktop/M/DAX",
+    "esperado": "Comportamento descrito em ROTEIRO_DESKTOP.txt",
+    "observado": null,
+    "resultado": "NÃO EXECUTADO",
+    "motivo": "Motor indisponível neste ambiente; capturas anteriores não são execução desta candidata"
+  },
+  {
+    "teste": "fevereiro por intervalo no Desktop",
+    "camada": "Power BI Desktop/M/DAX",
+    "esperado": "Comportamento descrito em ROTEIRO_DESKTOP.txt",
+    "observado": null,
+    "resultado": "NÃO EXECUTADO",
+    "motivo": "Motor indisponível neste ambiente; capturas anteriores não são execução desta candidata"
+  },
+  {
+    "teste": "filtros combinados e limpeza",
+    "camada": "Power BI Desktop/M/DAX",
+    "esperado": "Comportamento descrito em ROTEIRO_DESKTOP.txt",
+    "observado": null,
+    "resultado": "NÃO EXECUTADO",
+    "motivo": "Motor indisponível neste ambiente; capturas anteriores não são execução desta candidata"
+  },
+  {
+    "teste": "KPIs operacionais ignoram atendente e preservam data/fila",
+    "camada": "Power BI Desktop/M/DAX",
+    "esperado": "Comportamento descrito em ROTEIRO_DESKTOP.txt",
+    "observado": null,
+    "resultado": "NÃO EXECUTADO",
+    "motivo": "Motor indisponível neste ambiente; capturas anteriores não são execução desta candidata"
+  },
+  {
+    "teste": "contexto vazio DAX",
+    "camada": "Power BI Desktop/M/DAX",
+    "esperado": "Comportamento descrito em ROTEIRO_DESKTOP.txt",
+    "observado": null,
+    "resultado": "NÃO EXECUTADO",
+    "motivo": "Motor indisponível neste ambiente; capturas anteriores não são execução desta candidata"
+  },
+  {
+    "teste": "somente abandonadas DAX",
+    "camada": "Power BI Desktop/M/DAX",
+    "esperado": "Comportamento descrito em ROTEIRO_DESKTOP.txt",
+    "observado": null,
+    "resultado": "NÃO EXECUTADO",
+    "motivo": "Motor indisponível neste ambiente; capturas anteriores não são execução desta candidata"
+  },
+  {
+    "teste": "TMA ponderado no motor DAX",
+    "camada": "Power BI Desktop/M/DAX",
+    "esperado": "Comportamento descrito em ROTEIRO_DESKTOP.txt",
+    "observado": null,
+    "resultado": "NÃO EXECUTADO",
+    "motivo": "Motor indisponível neste ambiente; capturas anteriores não são execução desta candidata"
+  },
+  {
+    "teste": "rejeições M dos casos 01,02,03,04,05,07,08,10",
+    "camada": "Power BI Desktop/M/DAX",
+    "esperado": "Comportamento descrito em ROTEIRO_DESKTOP.txt",
+    "observado": null,
+    "resultado": "NÃO EXECUTADO",
+    "motivo": "Motor indisponível neste ambiente; capturas anteriores não são execução desta candidata"
+  },
+  {
+    "teste": "salvar fechar reabrir atualizar",
+    "camada": "Power BI Desktop/M/DAX",
+    "esperado": "Comportamento descrito em ROTEIRO_DESKTOP.txt",
+    "observado": null,
+    "resultado": "NÃO EXECUTADO",
+    "motivo": "Motor indisponível neste ambiente; capturas anteriores não são execução desta candidata"
+  }
+]

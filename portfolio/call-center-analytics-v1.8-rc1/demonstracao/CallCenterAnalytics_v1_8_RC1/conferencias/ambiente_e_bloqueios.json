@@ -1,0 +1,83 @@
+{
+  "python": "3.12.14",
+  "sistema": "Linux",
+  "executaveis": {
+    "PBIDesktop": null,
+    "dotnet": null,
+    "wine": null,
+    "pwsh": null,
+    "gh": null
+  },
+  "repositorio": "git remote/log falharam: nenhum repositório Git válido nesta pasta; sem conector GitHub ou Power BI exposto",
+  "busca_arquivos": "rg no workspace: nenhum config.json, src ou suíte original encontrado; scripts existentes são montagem de relatório e validadores",
+  "arquivos_zip_inspecionados": [
+    {
+      "arquivo": "upload/CallCenterAnalytics_v1_3(2).zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "upload/CallCenterAnalytics_v1_7_QA(4).zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "upload/CallCenterAnalytics_v1_7_QA(2).zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "upload/CallCenterAnalytics_v1_1(2).zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "upload/CallCenterAnalytics_v1_5_QA(1).zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "upload/CallCenterAnalytics_v1_4(1).zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "upload/calcen.zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "upload/CallCenterAnalytics_v1_6_QA(1).zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "outputs/CallCenterAnalytics_v1_5_QA.zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "outputs/CallCenterAnalytics_v1_6_QA.zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "outputs/CallCenterAnalytics_v1.zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "outputs/CallCenterAnalytics_v1_4.zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "outputs/CallCenterAnalytics_v1_2.zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "outputs/CallCenterAnalytics_v1_3.zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "outputs/CallCenterAnalytics_v1_7_QA.zip",
+      "candidatos": []
+    },
+    {
+      "arquivo": "outputs/CallCenterAnalytics_v1_1.zip",
+      "candidatos": []
+    }
+  ],
+  "simulador_original_disponivel": false,
+  "commit_simulador": null,
+  "suite_28_regeneracao_FIFO": "NÃO EXECUTADOS: código/configuração originais indisponíveis",
+  "M_DAX_Desktop": "NÃO EXECUTADOS: sem motor ou serviço compatível acessível"
+}

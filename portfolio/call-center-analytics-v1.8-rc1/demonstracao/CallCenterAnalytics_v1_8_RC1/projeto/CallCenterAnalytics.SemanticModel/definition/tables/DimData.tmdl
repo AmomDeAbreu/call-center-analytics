@@ -1,0 +1,61 @@
+table DimData
+	lineageTag: 75e72fc9-06e9-5289-91f0-2e4b842f9477
+
+	column Data
+		dataType: dateTime
+		isKey
+		formatString: dd/MM/yyyy
+		lineageTag: 51ebff56-82fc-58ae-a639-253db0d8b69c
+		summarizeBy: none
+		sourceColumn: Data
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Ano
+		dataType: int64
+		lineageTag: dfb7c5c7-1326-549a-b6fd-1bddb51eec39
+		summarizeBy: none
+		sourceColumn: Ano
+
+	column MesNumero
+		dataType: int64
+		isHidden
+		lineageTag: ef86a7a3-1735-55ac-8d65-7933e8b00b83
+		summarizeBy: none
+		sourceColumn: MesNumero
+
+	column Mes
+		dataType: string
+		lineageTag: c4f522d9-6e03-5831-900c-03c9203846c7
+		summarizeBy: none
+		sourceColumn: Mes
+		sortByColumn: MesNumero
+
+	column DiaSemanaNumero
+		dataType: int64
+		isHidden
+		lineageTag: eb314189-c2fc-5095-ab57-c2767dcdf2be
+		summarizeBy: none
+		sourceColumn: DiaSemanaNumero
+
+	column DiaSemana
+		dataType: string
+		lineageTag: b43a92ab-5822-54a1-afd1-c4c2b2a84be4
+		summarizeBy: none
+		sourceColumn: DiaSemana
+		sortByColumn: DiaSemanaNumero
+
+	partition DimData = m
+		mode: import
+		source =
+				let
+				    Fonte = Table.FromList(List.Dates(#date(2026,1,1),90,#duration(1,0,0,0)), Splitter.SplitByNothing(), {"Data"}),
+				    Tipos = Table.TransformColumnTypes(Fonte, {{"Data", type date}}),
+				    Ano = Table.AddColumn(Tipos,"Ano",each Date.Year([Data]),Int64.Type),
+				    MesN = Table.AddColumn(Ano,"MesNumero",each Date.Month([Data]),Int64.Type),
+				    Mes = Table.AddColumn(MesN,"Mes",each Date.ToText([Data],"MMM","pt-BR"),type text),
+				    DiaN = Table.AddColumn(Mes,"DiaSemanaNumero",each Date.DayOfWeek([Data],Day.Monday),Int64.Type),
+				    Dia = Table.AddColumn(DiaN,"DiaSemana",each Date.ToText([Data],"ddd","pt-BR"),type text)
+				in
+				    Dia
+

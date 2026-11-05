@@ -1,0 +1,256 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "detalhe",
+  "position": {
+    "x": 873.88551043418784,
+    "y": 298.10909225337792,
+    "z": 10000,
+    "height": 468.45714496959386,
+    "width": 381.57963808432373,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimAtendente"
+                    }
+                  },
+                  "Property": "atendente_nome"
+                }
+              },
+              "queryRef": "DimAtendente.atendente_nome",
+              "nativeQueryRef": "atendente_nome",
+              "displayName": "Atendente"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DimFila"
+                    }
+                  },
+                  "Property": "fila_nome"
+                }
+              },
+              "queryRef": "DimFila.fila_nome",
+              "nativeQueryRef": "fila_nome",
+              "displayName": "Fila"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "Atendidas por atendente"
+                }
+              },
+              "queryRef": "Medidas.Atendidas por atendente",
+              "nativeQueryRef": "Atendidas por atendente",
+              "displayName": "Atendidas"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medidas"
+                    }
+                  },
+                  "Property": "TMA minutos por atendente"
+                }
+              },
+              "queryRef": "Medidas.TMA minutos por atendente",
+              "nativeQueryRef": "TMA minutos por atendente",
+              "displayName": "TMA (min)"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {}
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {}
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "DimAtendente.atendente_nome"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "DimFila.fila_nome"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "Medidas.Atendidas por atendente"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "Medidas.TMA minutos por atendente"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Detalhamento por atendente e fila'"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#243746'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Segoe UI'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DEE5E8'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

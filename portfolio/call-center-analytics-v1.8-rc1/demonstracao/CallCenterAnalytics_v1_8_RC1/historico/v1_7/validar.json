@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "controles": {
+    "recebidas": 3000,
+    "atendidas": 1959,
+    "abandonadas": 1041,
+    "taxa_abandono": 0.347,
+    "tma_segundos": 480.7713118938234,
+    "atendidas_20s": 1846,
+    "sla": 0.6153333333333333,
+    "sha256": {
+      "atendentes.csv": "4f00bd34b510668bca6dc1dc22d798563e79fa26f35acb2e0570aa82c42d3c81",
+      "chamadas.csv": "133323d4e0a55a929191caa885cb1c2fb0be0807e71e4745926438210f05ac06",
+      "disponibilidade_atendentes.csv": "ce111a6ed5725b963c65070f38244b999c89b2c7bc18cf30efb21175202c4654",
+      "filas.csv": "296d91d633c0805ba8e8a8b9a41d574fb477dd7c65b9fce2755e663fc7fcc921"
+    }
+  }
+}

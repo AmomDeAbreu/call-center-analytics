@@ -1,0 +1,656 @@
+{
+  "status": "PASSOU",
+  "limite": "SQL/Python e inspeção estática. NÃO comprova execução de M/DAX, seleção cruzada, renderização ou reabertura no Desktop.",
+  "controles": {
+    "global": {
+      "recebidas": 3000,
+      "atendidas": 1959,
+      "abandonadas": 1041,
+      "tempo_total_s": 941831,
+      "ate_20s": 1846,
+      "tma_s_exato": "941831/1959",
+      "tma_min_exato": "941831/117540",
+      "abandono_exato": "347/1000",
+      "sla_exato": "923/1500"
+    },
+    "F02": {
+      "recebidas": 1070,
+      "atendidas": 655,
+      "abandonadas": 415,
+      "tempo_total_s": 490318,
+      "ate_20s": 602,
+      "tma_s_exato": "490318/655",
+      "tma_min_exato": "245159/19650",
+      "abandono_exato": "83/214",
+      "sla_exato": "301/535"
+    },
+    "fevereiro": {
+      "recebidas": 889,
+      "atendidas": 574,
+      "abandonadas": 315,
+      "tempo_total_s": 257732,
+      "ate_20s": 550,
+      "tma_s_exato": "128866/287",
+      "tma_min_exato": "64433/8610",
+      "abandono_exato": "45/127",
+      "sla_exato": "550/889"
+    },
+    "AT01": {
+      "recebidas": 244,
+      "atendidas": 244,
+      "abandonadas": 0,
+      "tempo_total_s": 105938,
+      "ate_20s": 234,
+      "tma_s_exato": "52969/122",
+      "tma_min_exato": "52969/7320",
+      "abandono_exato": "0",
+      "sla_exato": "117/122"
+    }
+  },
+  "por_atendente": [
+    {
+      "atendente": "AT01",
+      "recebidas": 244,
+      "atendidas": 244,
+      "abandonadas": 0,
+      "tempo_total_s": 105938,
+      "ate_20s": 234,
+      "tma_s_exato": "52969/122",
+      "tma_min_exato": "52969/7320",
+      "abandono_exato": "0",
+      "sla_exato": "117/122"
+    },
+    {
+      "atendente": "AT02",
+      "recebidas": 298,
+      "atendidas": 298,
+      "abandonadas": 0,
+      "tempo_total_s": 152818,
+      "ate_20s": 281,
+      "tma_s_exato": "76409/149",
+      "tma_min_exato": "76409/8940",
+      "abandono_exato": "0",
+      "sla_exato": "281/298"
+    },
+    {
+      "atendente": "AT03",
+      "recebidas": 228,
+      "atendidas": 228,
+      "abandonadas": 0,
+      "tempo_total_s": 103996,
+      "ate_20s": 216,
+      "tma_s_exato": "25999/57",
+      "tma_min_exato": "25999/3420",
+      "abandono_exato": "0",
+      "sla_exato": "18/19"
+    },
+    {
+      "atendente": "AT04",
+      "recebidas": 225,
+      "atendidas": 225,
+      "abandonadas": 0,
+      "tempo_total_s": 115634,
+      "ate_20s": 213,
+      "tma_s_exato": "115634/225",
+      "tma_min_exato": "57817/6750",
+      "abandono_exato": "0",
+      "sla_exato": "71/75"
+    },
+    {
+      "atendente": "AT05",
+      "recebidas": 246,
+      "atendidas": 246,
+      "abandonadas": 0,
+      "tempo_total_s": 119471,
+      "ate_20s": 232,
+      "tma_s_exato": "119471/246",
+      "tma_min_exato": "119471/14760",
+      "abandono_exato": "0",
+      "sla_exato": "116/123"
+    },
+    {
+      "atendente": "AT06",
+      "recebidas": 256,
+      "atendidas": 256,
+      "abandonadas": 0,
+      "tempo_total_s": 117442,
+      "ate_20s": 240,
+      "tma_s_exato": "58721/128",
+      "tma_min_exato": "58721/7680",
+      "abandono_exato": "0",
+      "sla_exato": "15/16"
+    },
+    {
+      "atendente": "AT07",
+      "recebidas": 245,
+      "atendidas": 245,
+      "abandonadas": 0,
+      "tempo_total_s": 122636,
+      "ate_20s": 229,
+      "tma_s_exato": "122636/245",
+      "tma_min_exato": "30659/3675",
+      "abandono_exato": "0",
+      "sla_exato": "229/245"
+    },
+    {
+      "atendente": "AT08",
+      "recebidas": 217,
+      "atendidas": 217,
+      "abandonadas": 0,
+      "tempo_total_s": 103896,
+      "ate_20s": 201,
+      "tma_s_exato": "103896/217",
+      "tma_min_exato": "8658/1085",
+      "abandono_exato": "0",
+      "sla_exato": "201/217"
+    }
+  ],
+  "testes": [
+    {
+      "teste": "global",
+      "camada": "SQL nos CSVs; não interação Desktop",
+      "esperado": {
+        "recebidas": 3000,
+        "atendidas": 1959,
+        "abandonadas": 1041,
+        "ate_20s": 1846
+      },
+      "observado": {
+        "recebidas": 3000,
+        "atendidas": 1959,
+        "abandonadas": 1041,
+        "ate_20s": 1846
+      },
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "F02",
+      "camada": "SQL nos CSVs; não interação Desktop",
+      "esperado": {
+        "recebidas": 1070,
+        "atendidas": 655
+      },
+      "observado": {
+        "recebidas": 1070,
+        "atendidas": 655
+      },
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "fevereiro",
+      "camada": "SQL nos CSVs; não interação Desktop",
+      "esperado": {
+        "recebidas": 889,
+        "atendidas": 574
+      },
+      "observado": {
+        "recebidas": 889,
+        "atendidas": 574
+      },
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "AT01",
+      "camada": "SQL nos CSVs; não interação Desktop",
+      "esperado": {
+        "atendidas": 244
+      },
+      "observado": {
+        "atendidas": 244
+      },
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "tempo realizado igual ao planejado",
+      "camada": "SQL nos CSVs",
+      "esperado": 941831,
+      "observado": 941831,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "abandono exato",
+      "camada": "SQL nos CSVs",
+      "esperado": "347/1000",
+      "observado": "347/1000",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "SLA exato",
+      "camada": "SQL nos CSVs",
+      "esperado": "923/1500",
+      "observado": "923/1500",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "TMA arredondado 2 casas para conferência",
+      "camada": "Controle numérico Python; não formatação visual",
+      "esperado": "8.01",
+      "observado": "8.01",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "contexto vazio",
+      "camada": "SQL nos CSVs",
+      "esperado": [
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "observado": [
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "somente abandonadas",
+      "camada": "SQL: 04/01/2026, F02; sem filtro status; execução DAX pendente",
+      "esperado": [
+        0,
+        null,
+        "1",
+        "0"
+      ],
+      "observado": [
+        0,
+        null,
+        "1",
+        "0"
+      ],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "horas existentes",
+      "camada": "SQL nos CSVs",
+      "esperado": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "observado": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "datas com chamadas",
+      "camada": "SQL nos CSVs",
+      "esperado": 90,
+      "observado": 90,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "oito profissionais com atendimentos",
+      "camada": "SQL nos CSVs",
+      "esperado": [
+        "AT01",
+        "AT02",
+        "AT03",
+        "AT04",
+        "AT05",
+        "AT06",
+        "AT07",
+        "AT08"
+      ],
+      "observado": [
+        "AT01",
+        "AT02",
+        "AT03",
+        "AT04",
+        "AT05",
+        "AT06",
+        "AT07",
+        "AT08"
+      ],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "soma dos atendimentos por profissional",
+      "camada": "SQL nos CSVs",
+      "esperado": 1959,
+      "observado": 1959,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "TMA ponderado consolidado",
+      "camada": "SQL nos CSVs",
+      "esperado": "941831/1959",
+      "observado": "941831/1959",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "chaves chamadas",
+      "camada": "SQL nos CSVs",
+      "esperado": [
+        3000,
+        3000,
+        0
+      ],
+      "observado": [
+        3000,
+        3000,
+        0
+      ],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "chaves filas",
+      "camada": "SQL nos CSVs",
+      "esperado": [
+        3,
+        3,
+        0
+      ],
+      "observado": [
+        3,
+        3,
+        0
+      ],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "chaves atendentes",
+      "camada": "SQL nos CSVs",
+      "esperado": [
+        8,
+        8,
+        0
+      ],
+      "observado": [
+        8,
+        8,
+        0
+      ],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "chaves disponibilidade_atendentes",
+      "camada": "SQL nos CSVs",
+      "esperado": [
+        1110,
+        1110,
+        0
+      ],
+      "observado": [
+        1110,
+        1110,
+        0
+      ],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "referências fila/atendente",
+      "camada": "SQL nos CSVs",
+      "esperado": 0,
+      "observado": 0,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "sobreposições por pares disponibilidade",
+      "camada": "SQL nos CSVs",
+      "esperado": 0,
+      "observado": 0,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "sobreposições por pares ocupação",
+      "camada": "SQL nos CSVs",
+      "esperado": 0,
+      "observado": 0,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "localidade relatório",
+      "camada": "Estrutura PBIR; renderização pendente",
+      "esperado": "pt-BR",
+      "observado": "pt-BR",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "cultura modelo",
+      "camada": "Estrutura TMDL",
+      "esperado": true,
+      "observado": true,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "página inicial",
+      "camada": "Estrutura PBIR",
+      "esperado": "visao_geral",
+      "observado": "visao_geral",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "intervalo de datas visao_geral",
+      "camada": "PBIR; interação Desktop pendente",
+      "esperado": "'Between'",
+      "observado": "'Between'",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "intervalo de datas atendentes",
+      "camada": "PBIR; interação Desktop pendente",
+      "esperado": "'Between'",
+      "observado": "'Between'",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "fonte neutra",
+      "camada": "TMDL",
+      "esperado": false,
+      "observado": false,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "ausência de predicados de teste",
+      "camada": "Inspeção de filtros PBIR",
+      "esperado": [],
+      "observado": [],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "filtro funcional preservado",
+      "camada": "Inspeção PBIR; exclusão NAO_ATRIBUIDO intencional",
+      "esperado": [
+        "pages/atendentes/page.json"
+      ],
+      "observado": [
+        "pages/atendentes/page.json"
+      ],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "dimensões visao_geral",
+      "camada": "Estrutura PBIR",
+      "esperado": [
+        1440,
+        810
+      ],
+      "observado": [
+        1440,
+        810
+      ],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "dimensões atendentes",
+      "camada": "Estrutura PBIR",
+      "esperado": [
+        1440,
+        810
+      ],
+      "observado": [
+        1440,
+        810
+      ],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "precisão visao_geral/visuals/kpi_2",
+      "camada": "Estrutura PBIR",
+      "esperado": "2L",
+      "observado": "2L",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "precisão visao_geral/visuals/kpi_3",
+      "camada": "Estrutura PBIR",
+      "esperado": "2L",
+      "observado": "2L",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "precisão visao_geral/visuals/kpi_4",
+      "camada": "Estrutura PBIR",
+      "esperado": "2L",
+      "observado": "2L",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "precisão atendentes/visuals/tma",
+      "camada": "Estrutura PBIR",
+      "esperado": "2L",
+      "observado": "2L",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "ordenação volume",
+      "camada": "Estrutura PBIR; renderização pendente",
+      "esperado": [
+        [
+          "atendente_nome",
+          "Ascending"
+        ]
+      ],
+      "observado": [
+        [
+          "atendente_nome",
+          "Ascending"
+        ]
+      ],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "ordenação tma_prof",
+      "camada": "Estrutura PBIR; renderização pendente",
+      "esperado": [
+        [
+          "atendente_nome",
+          "Ascending"
+        ]
+      ],
+      "observado": [
+        [
+          "atendente_nome",
+          "Ascending"
+        ]
+      ],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "eixo horário visível",
+      "camada": "Estrutura PBIR",
+      "esperado": "true",
+      "observado": "true",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "ordem horária",
+      "camada": "Estrutura PBIR",
+      "esperado": "Ascending",
+      "observado": "Ascending",
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "referências explícitas dos visuais",
+      "camada": "Inspeção TMDL/PBIR; não parser oficial",
+      "esperado": [],
+      "observado": [],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "quantidade relacionamentos",
+      "camada": "Inspeção TMDL",
+      "esperado": 3,
+      "observado": 3,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "sem relação inativa/bidirecional explícita",
+      "camada": "Inspeção TMDL; defaults mantidos",
+      "esperado": false,
+      "observado": false,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "referências relacionamentos",
+      "camada": "Inspeção TMDL",
+      "esperado": [],
+      "observado": [],
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "destino PBIP",
+      "camada": "Sistema de arquivos",
+      "esperado": true,
+      "observado": true,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "destino PBIR",
+      "camada": "Sistema de arquivos",
+      "esperado": true,
+      "observado": true,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "sem cache distribuído",
+      "camada": "Sistema de arquivos",
+      "esperado": 0,
+      "observado": 0,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "medidas numéricas sem FORMAT",
+      "camada": "Inspeção DAX; sem execução DAX",
+      "esperado": false,
+      "observado": false,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "formato TMA com 2 casas",
+      "camada": "Metadados TMDL",
+      "esperado": 2,
+      "observado": 2,
+      "resultado": "PASSOU"
+    },
+    {
+      "teste": "contêineres dentro das páginas",
+      "camada": "Geometria PBIR; não renderização",
+      "esperado": [],
+      "observado": [],
+      "resultado": "PASSOU"
+    }
+  ]
+}

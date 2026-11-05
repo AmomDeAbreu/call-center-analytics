@@ -1,0 +1,58 @@
+ESPECIFICAÇÃO PARA QA — não constitui teste executado nem solicitação ao responsável.
+CALL CENTER ANALYTICS v1.8 RC1 — ROTEIRO DE ACEITE (AINDA NÃO EXECUTADO)
+
+IDENTIFICAÇÃO
+Registrar hash do ZIP de origem, versão do Desktop, operador, data e pasta de teste.
+O manifesto é conferido ANTES da primeira abertura. Abrir/salvar e configurar
+PastaDados altera arquivos e recria cache; isso não significa corrupção.
+Preservar o ZIP original. Salvar a cópia testada e seus novos hashes separadamente.
+Registrar para cada caso: esperado, observado, PASS/FAIL e nome da captura/erro.
+
+A — BASE ORIGINAL
+1. Extrair em pasta nova. Conferir manifesto no Codespaces antes de editar.
+2. Abrir projeto/CallCenterAnalytics.pbip. Deve iniciar na Visão geral.
+3. Configurar PastaDados para a pasta com os quatro CSVs da raiz do pacote.
+4. Aplicar e atualizar duas vezes. Sem filtros: 3000 recebidas, 1959 atendidas,
+   abandono 34,70%, TMA 8,01 min, SLA 61,53%.
+5. Datas devem ter início/fim visíveis nas DUAS páginas. Testar 01/02/2026 a
+   28/02/2026, fila Todos: 889 recebidas, 574 atendidas, TMA 7,48 min.
+   Na página Atendentes, confirmar 574 e 7,48 min. Os filtros são independentes;
+   não se presume sincronização entre páginas.
+6. Período completo e Suporte: 1070 recebidas, 655 atendidas, abandono 38,79%,
+   TMA 12,48 min e SLA 56,26%.
+7. Atendentes, período completo/fila Todos/Atendente 01: 244 e 7,24 min.
+8. SOMENTE ABANDONADAS: Visão geral, início E fim em 04/01/2026, fila Suporte.
+   Esperado: 8 recebidas, 0 atendidas, abandono 100%, SLA 0%, TMA sem valor.
+   Não filtrar status. O recorte data/fila foi conferido nos CSVs.
+9. Em uma cópia descartável, adicionar DimAtendente[atendente_nome] aos filtros
+   da página Visão geral. Com período completo e fila Todos, selecionar Atendente 01.
+   Os CINCO KPIs devem manter os valores do passo 4. Remover esse filtro ao terminar.
+10. Limpar tudo, salvar, fechar, reabrir e atualizar; confirmar totais e layout.
+    Registrar também os oito profissionais, eixos horários e TMA visíveis.
+
+B — FONTES CONTROLADAS (CÓPIA DESCARTÁVEL DO PROJETO)
+As pastas casos_desktop/01 a 10 contêm CSVs deliberadamente modificados.
+Não substituir os CSVs originais. Usar uma cópia do projeto só para estes testes.
+Para cada caso, configurar PastaDados para a respectiva pasta, aplicar e atualizar.
+Registrar a mensagem completa; números antigos em cache não significam sucesso.
+Cancelar/reverter uma carga inválida antes do caso seguinte.
+
+01_duplicidade: M deve rejeitar chamada_id duplicado.
+02_referencia: M deve rejeitar fila inexistente.
+03_obrigatorio: M deve rejeitar entrada_em vazia.
+04_calendario: M deve rejeitar entrada em 01/04/2026.
+05_duracao: M deve rejeitar pós-atendimento realizado negativo/divergente.
+06_ocupacao: Python deve rejeitar OCUPACAO_SOBREPOSTA. Não se exige rejeição M
+   equivalente nesta revisão; esse caso NÃO pode prosseguir ao painel no fluxo normal.
+07_disp_nao_utilizada: M deve rejeitar DISP_REFERENCIA mesmo sem chamada associada.
+08_disp_sobreposta: M deve rejeitar DISP_SOBREPOSICAO.
+09_sem_chamadas: carga deve ser aceita; Visão geral com contagens zero, taxas e TMA
+   sem valor (vazio ou indicação padrão de branco; nunca mostrar número anterior).
+10_sem_chamadas_disp_invalida: M deve rejeitar DISP_REFERENCIA mesmo com fato vazio.
+
+Os resultados Python desses arquivos estão em casos_desktop/resultados_python.json.
+Eles NÃO são resultado dos testes M/DAX acima. Se M aceitar caso previsto como
+inválido, registrar FAIL e devolver o erro ao engenheiro; não marcar como aprovado.
+
+Ao terminar: descartar a cópia de testes negativos e voltar à base original.
+Não publicar enquanto houver bloqueios de aceite ou reprodutibilidade.
